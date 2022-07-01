@@ -1,24 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace JuegoDePares
 {
-    public partial class Form1 : Form
+    public partial class VentanaPrincipal : Form
     {
         Random random = new Random();
 
         List<string> icons = new List<string>()
         {
             "!", "!", "N", "N", ",", ",", "k", "k",
-            "b", "b", "v", "v", "w", "w", "z", "z"
+            "b", "b", "v", "v", "w", "w", "z", "z",
+            "U", "U", "G", "G"
         };
 
         Label primerClick = null, segundoClick = null;
@@ -64,11 +59,11 @@ namespace JuegoDePares
             }
 
             //Si no queda ningun icono oculto, el juego termina
-            MessageBox.Show("You matched all the icons!", "Congratulations");
+            MessageBox.Show("¡Completaste el juego!", "Felicidades");
             Close();
         }
 
-        public Form1()
+        public VentanaPrincipal()
         {
             InitializeComponent();
             asignarIconos();
